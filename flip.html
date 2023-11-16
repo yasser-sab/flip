@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body {
+			min-height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.card{
+			position: relative;
+
+			width: 200px;
+			height: 400px;
+			color: white;
+			
+			perspective: 500px;
+			-webkit-perspective: 500px;
+			
+		}
+		.front,.back{
+			transition: 1s;
+			backface-visibility: hidden;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+	/*	.front:hover{
+			
+		}*/
+
+		.card:hover .back {
+			transform: rotateY(0);
+		}
+
+		.card:hover .front{
+			transform: rotateY(180deg);
+		}
+		.front {
+			background: blue;
+		}
+		.back{
+			background: red;
+			transform: rotateY(-180deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="card">
+		<div class="front">front</div>
+		<div class="back">back</div>
+	</div>
+</body>
+</html>
